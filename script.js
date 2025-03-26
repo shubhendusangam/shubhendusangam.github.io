@@ -33,3 +33,12 @@ document.getElementById('toggle-resume').addEventListener('click', function () {
     button.textContent = 'View Resume';
   }
 });
+
+document.getElementById("contactForm").addEventListener("submit", (event) => {
+  event.preventDefault(); // Prevent the default form submission
+
+  // Redirect to the home page after 1 seconds
+  setTimeout(() => {
+    window.location.href = "/"; // Replace '/' with your home page URL
+  }, 1000); // 1000ms = 1 seconds
+});
