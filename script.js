@@ -34,6 +34,18 @@ document.getElementById('toggle-resume').addEventListener('click', function () {
   }
 });
 
+document.getElementById("download-resume").addEventListener("click", () => {
+  // Trigger download
+  const resumeUrl = "resume.pdf"; // Path to your resume file
+  const link = document.createElement("a"); // Create a temporary link element
+  link.href = resumeUrl; // Set href to the file URL
+  link.download = "Shubhendu_Resume.pdf"; // Set the name for the downloaded file
+  document.body.appendChild(link); // Add the link to the body
+  link.click(); // Trigger the click event to start download
+  document.body.removeChild(link); // Remove the temporary link element
+});
+
+
 document.getElementById("contactForm").addEventListener("submit", (event) => {
   event.preventDefault(); // Prevent the default form submission
 
