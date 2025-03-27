@@ -1,0 +1,130 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background: rgba(0, 0, 0, 0.99);
+    line-height: 1.6;
+    color: rgba(0, 0, 0, 0.99);
+    padding: 30px;
+}
+
+/* Resume Container */
+.resume {
+    max-width: 800px;
+    margin: auto;
+    background: #fff;
+    padding: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.resume-header {
+    text-align: center;
+    border-bottom: 2px solid #eaeaea;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+.resume-header .name {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+.resume-header .contact {
+    font-size: 0.9em;
+    color: #555;
+}
+
+.resume-header .contact a {
+    color: rgba(0, 0, 0, 0.99);
+    text-decoration: none;
+}
+
+/* Resume Sections */
+.resume-section {
+    margin-bottom: 30px;
+}
+
+.resume-section h2 {
+    font-size: 1.1em;
+    color: #2e3d50;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+
+/* Summary */
+.summary p {
+    margin: 10px 0;
+}
+
+/* Experience */
+.job {
+    margin-bottom: 30px;
+}
+
+.job h3 {
+    font-size: 1.1em;
+    color: #2e3d50;
+    margin-bottom: 5px;
+}
+
+.job .job-details {
+    font-size: 0.9em;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.job p {
+    margin: 10px 0;
+}
+
+.job ul {
+    list-style-type: disc;
+    margin-left: 20px;
+}
+
+.job ul li {
+    margin-bottom: 5px;
+}
+
+/* Education */
+.education p {
+    margin: 10px 0;
+}
+
+.education .cgpa {
+    color: #555;
+}
+
+/* Certifications */
+.certifications ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.certifications ul li {
+    margin-bottom: 10px;
+}
+
+.certifications .cert-issuer {
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* Skills */
+.skills ul {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.skills ul li {
+    margin-bottom: 5px;
+}

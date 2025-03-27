@@ -614,6 +614,12 @@ main {
   box-shadow: 0 4px 10px rgb(2, 81, 6);
 }
 
+iframe {
+  overflow: hidden; /* Hides scrollbars */
+  width: 100%; /* Make sure iframe width fits the parent */
+  height: 1100px; /* Set height to prevent layout issues */
+}
+
 
 .section.visible {
   display: block; /* Only the active section is displayed */
