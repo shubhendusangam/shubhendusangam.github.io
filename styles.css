@@ -479,11 +479,11 @@ main {
 
 /* Optional: Make sure download-button and toggle styles are consistent */
 .btn {
-  padding: 0.8rem 1.5rem;
+  padding: 0.2rem 0.5rem;
   background: #f39c12;
   color: #fff;
   text-decoration: none;
-  border-radius: 5px;
+  border-radius: 1px;
   font-size: 1rem;
   transition: background 0.3s ease;
   cursor: pointer;
@@ -547,7 +547,7 @@ main {
 
 /* Social Button Styling (for individual social links) */
 .social-btn {
-  background: #222;
+  background: #f39c12;
   display: flex;
   align-items: center;
   padding: 0.8rem 1rem;

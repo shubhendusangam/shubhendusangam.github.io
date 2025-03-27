@@ -21,29 +21,22 @@ document.addEventListener('DOMContentLoaded', function () {
   document.getElementById('about').classList.add('visible');
 });
 
-document.getElementById('toggle-resume').addEventListener('click', function () {
-  const viewer = document.querySelector('.resume-viewer');
-  const button = document.getElementById('toggle-resume');
+document.addEventListener("DOMContentLoaded", () => {
+  // By default, show the resume
+  const resumeViewer = document.querySelector(".resume-viewer");
+  resumeViewer.style.display = "block";
 
-  if (viewer.style.display === 'none') {
-    viewer.style.display = 'block';
-    button.textContent = 'Hide Resume';
-  } else {
-    viewer.style.display = 'none';
-    button.textContent = 'View Resume';
-  }
+  // Download Resume functionality
+  document.getElementById("download-resume").addEventListener("click", () => {
+    const link = document.createElement("a");
+    link.href = "resume.pdf"; // Path to your resume file
+    link.download = "Shubhendu_Resume.pdf"; // Customize the file name
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  });
 });
 
-document.getElementById("download-resume").addEventListener("click", () => {
-  // Trigger download
-  const resumeUrl = "resume.pdf"; // Path to your resume file
-  const link = document.createElement("a"); // Create a temporary link element
-  link.href = resumeUrl; // Set href to the file URL
-  link.download = "Shubhendu_Resume.pdf"; // Set the name for the downloaded file
-  document.body.appendChild(link); // Add the link to the body
-  link.click(); // Trigger the click event to start download
-  document.body.removeChild(link); // Remove the temporary link element
-});
 
 
 document.getElementById("contactForm").addEventListener("submit", (event) => {
