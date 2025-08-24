@@ -614,12 +614,133 @@ main {
   box-shadow: 0 4px 10px rgb(2, 81, 6);
 }
 
-iframe {
-  overflow: hidden; /* Hides scrollbars */
-  width: 100%; /* Make sure iframe width fits the parent */
-  height: 1100px; /* Set height to prevent layout issues */
+/* Additional styles to fix resume section scrolling with auto-scaling */
+.resume-viewer {
+    margin-top: 20px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
+.resume-viewer iframe {
+    width: 100%;
+    min-height: 50vh; /* 50% of viewport height as minimum */
+    height: auto;
+    border: none;
+    display: block;
+    overflow: hidden;
+    scrolling: no;
+    transform-origin: top left;
+    transition: all 0.3s ease;
+}
+
+/* Alternative: If iframe content is not responsive, add scrolling */
+.resume-viewer-scrollable {
+    max-height: 80vh; /* 80% of viewport height */
+    overflow-y: auto;
+    width: 100%;
+    background: #f9f9f9;
+}
+
+.resume-viewer-scrollable iframe {
+    width: 100%;
+    height: 100vh; /* Full viewport height */
+    border: none;
+    overflow: hidden;
+    scrolling: no;
+    transform-origin: top left;
+    transition: all 0.3s ease;
+}
+
+/* Hide iframe scrollbars - More aggressive approach */
+.resume-viewer iframe,
+.resume-viewer-scrollable iframe {
+    -ms-overflow-style: none !important;  /* Internet Explorer 10+ */
+    scrollbar-width: none !important;  /* Firefox */
+    overflow: hidden !important;
+    scrolling: no !important;
+}
+
+.resume-viewer iframe::-webkit-scrollbar,
+.resume-viewer-scrollable iframe::-webkit-scrollbar {
+    display: none !important;  /* Safari and Chrome */
+    width: 0 !important;
+    height: 0 !important;
+}
+
+/* Responsive scaling for different screen sizes */
+@media screen and (max-width: 1200px) {
+    .resume-viewer iframe {
+        min-height: 45vh;
+        transform: scale(0.95);
+    }
+
+    .resume-viewer-scrollable {
+        max-height: 75vh;
+    }
+
+    .resume-viewer-scrollable iframe {
+        height: 90vh;
+        transform: scale(0.95);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .resume-viewer iframe {
+        min-height: 40vh;
+        transform: scale(0.9);
+    }
+
+    .resume-viewer-scrollable {
+        max-height: 70vh;
+    }
+
+    .resume-viewer-scrollable iframe {
+        height: 80vh;
+        transform: scale(0.9);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .resume-viewer iframe {
+        min-height: 35vh;
+        transform: scale(0.85);
+    }
+
+    .resume-viewer-scrollable {
+        max-height: 60vh;
+    }
+
+    .resume-viewer-scrollable iframe {
+        height: 70vh;
+        transform: scale(0.85);
+    }
+}
+
+/* Large screens */
+@media screen and (min-width: 1400px) {
+    .resume-viewer iframe {
+        min-height: 60vh;
+        transform: scale(1.05);
+    }
+
+    .resume-viewer-scrollable iframe {
+        height: 110vh;
+        transform: scale(1.05);
+    }
+}
+
+/* Additional fallback to hide any remaining scrollbars */
+iframe {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+iframe::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+}
 
 .section.visible {
   display: block; /* Only the active section is displayed */
