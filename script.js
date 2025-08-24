@@ -22,19 +22,34 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener("DOMContentLoaded", () => {
-  // By default, show the resume
-  const resumeViewer = document.querySelector(".resume-viewer");
-  resumeViewer.style.display = "block";
+    // Show the resume viewer by default (if it exists)
+    const resumeViewer = document.querySelector(".resume-viewer");
+    if (resumeViewer) {
+        resumeViewer.style.display = "block";
+    }
 
-  // Download Resume functionality
-  document.getElementById("download-resume").addEventListener("click", () => {
-    const link = document.createElement("a");
-    link.href = "resume.pdf"; // Path to your resume file
-    link.download = "Shubhendu_Resume.pdf"; // Customize the file name
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  });
+    // Download Resume functionality
+    const downloadButton = document.getElementById("download-resume");
+    if (downloadButton) {
+        downloadButton.addEventListener("click", (event) => {
+            event.preventDefault(); // Prevent default behavior if it's a link
+
+            try {
+                const link = document.createElement("a");
+                link.href = "resume.pdf"; // Path to your resume file
+                link.download = "Shubhendu_Resume.pdf"; // Customize the file name
+                link.style.display = "none"; // Hide the temporary link
+
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            } catch (error) {
+                console.error("Error downloading resume:", error);
+                // Fallback: open in new tab if download fails
+                window.open("resume.pdf", "_blank");
+            }
+        });
+    }
 });
 
 document.getElementById("contactForm").addEventListener("submit", (event) => {
@@ -69,14 +84,3 @@ function resizeIframe(iframe) {
         iframe.style.height = '800px';
     }
 }
-
-// Handle download resume button
-document.getElementById('download-resume').addEventListener('click', function() {
-    // Create a temporary link to download the resume
-    var link = document.createElement('a');
-    link.href = 'resume.html'; // You might want to point this to a PDF file instead
-    link.download = 'Shubhendu_Sangam_Resume.html';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-});
