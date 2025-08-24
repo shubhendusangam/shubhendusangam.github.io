@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             try {
                 const link = document.createElement("a");
-                link.href = "resume.pdf"; // Path to your resume file
+                link.href = "Shubhendu_resume.pdf"; // Path to your resume file
                 link.download = "Shubhendu_Resume.pdf"; // Customize the file name
                 link.style.display = "none"; // Hide the temporary link
 
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
             } catch (error) {
                 console.error("Error downloading resume:", error);
                 // Fallback: open in new tab if download fails
-                window.open("resume.pdf", "_blank");
+                window.open("Shubhendu_resume.pdf", "_blank");
             }
         });
     }
